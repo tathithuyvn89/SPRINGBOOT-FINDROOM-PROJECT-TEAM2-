@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -27,6 +28,8 @@ import javax.persistence.*;
   private CategoryRoom categoryRoom;
 
   @ManyToOne
-
   private Host host;
+
+  @OneToMany
+  private Set<Feature> features;
 }
