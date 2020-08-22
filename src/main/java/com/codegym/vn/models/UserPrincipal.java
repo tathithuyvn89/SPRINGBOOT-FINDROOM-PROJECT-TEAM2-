@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class CustomerPrincipal implements UserDetails {
+public class UserPrincipal implements UserDetails {
     private static final long serialVersionUID = 1L;
 
 
@@ -18,18 +18,18 @@ public class CustomerPrincipal implements UserDetails {
     private String password;
     private Collection<? extends  GrantedAuthority> roles;
 
-    public CustomerPrincipal(Long id, String username, String password, Collection<? extends GrantedAuthority> roles) {
+    public UserPrincipal(Long id, String username, String password, Collection<? extends GrantedAuthority> roles) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.roles = roles;
     }
 
-    public  static CustomerPrincipal build(User user){
+    public  static UserPrincipal build(User user){
         List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getName())
         ).collect(Collectors.toList());
-        return new CustomerPrincipal(user.getId(), user.getUsername(), user.getPassword(),authorities);
+        return new UserPrincipal(user.getId(), user.getUsername(), user.getPassword(),authorities);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class CustomerPrincipal implements UserDetails {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomerPrincipal that = (CustomerPrincipal) o;
+        UserPrincipal that = (UserPrincipal) o;
         return Objects.equals(id, that.id);
     }
 

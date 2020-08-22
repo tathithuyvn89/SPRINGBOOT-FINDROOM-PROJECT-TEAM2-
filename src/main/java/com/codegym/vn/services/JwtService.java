@@ -1,6 +1,6 @@
 package com.codegym.vn.services;
 
-import com.codegym.vn.models.CustomerPrincipal;
+import com.codegym.vn.models.UserPrincipal;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,9 +19,9 @@ public class JwtService {
 
 
     public String generateTokenLogin(Authentication authentication){
-        CustomerPrincipal customerPrincipal = (CustomerPrincipal) authentication.getPrincipal();
+        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
         return Jwts.builder()
-                .setSubject(customerPrincipal.getUsername())
+                .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + EXPIRE_TIME*1000))
                 .signWith(SignatureAlgorithm.HS512,SECRET_KEY)

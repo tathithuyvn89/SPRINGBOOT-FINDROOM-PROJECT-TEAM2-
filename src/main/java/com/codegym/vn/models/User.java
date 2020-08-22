@@ -18,7 +18,7 @@ import java.util.Set;
     private String password;
     private String firstName;
     private String lastName;
-    private String personId;
+//    private String personId;
     private String address;
     private String phoneNumber;
 
