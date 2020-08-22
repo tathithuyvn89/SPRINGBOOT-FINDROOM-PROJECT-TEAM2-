@@ -24,12 +24,13 @@ import java.util.Set;
   @ManyToOne
   private CategoryHome categoryHome;
 
-  @ManyToOne
-  private CategoryRoom categoryRoom;
+  @OneToMany(mappedBy = "house")
+  private Set<Booking> booking;
 
   @ManyToOne
-  private Host host;
+  private User host;
 
-  @OneToMany
-  private Set<Feature> features;
+
+//  @ManyToMany
+//  private Set<Feature> features;
 }

@@ -20,8 +20,9 @@ import java.util.Date;
   private double payment;
 
   @ManyToOne
-  private Customer customer;
+  private User customer;
+
 
   @ManyToOne
-  private Host host;
+  private House house;
 }
