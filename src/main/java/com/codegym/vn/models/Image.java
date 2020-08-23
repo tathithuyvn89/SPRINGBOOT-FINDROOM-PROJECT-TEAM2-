@@ -14,7 +14,7 @@ public class Image {
     private Long id;
     private String srcImg;
 
-    @ManyToOne
+    @ManyToOne()
     private House house;
 
 }

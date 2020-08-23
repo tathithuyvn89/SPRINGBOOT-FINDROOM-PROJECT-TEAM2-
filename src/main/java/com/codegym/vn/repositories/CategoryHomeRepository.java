@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-  public interface CategoryHomeRepository extends JpaRepository<CategoryHome, Long> { }
+  public interface CategoryHomeRepository extends JpaRepository<CategoryHome, Long> {
+  Boolean existsCategoryHomesByNameCategoryHome(String name);
+}

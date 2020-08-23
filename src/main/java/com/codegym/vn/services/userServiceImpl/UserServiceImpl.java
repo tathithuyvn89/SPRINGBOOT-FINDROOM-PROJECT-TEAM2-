@@ -1,37 +1,37 @@
-package com.codegym.vn.services.customerServiceImpl;
+package com.codegym.vn.services.userServiceImpl;
 
 import com.codegym.vn.models.User;
-import com.codegym.vn.repositories.CustomerRepository;
+import com.codegym.vn.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-  public class CustomerServiceImpl implements CustomerService {
+  public class UserServiceImpl implements UserService {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private UserRepository userRepository;
 
     @Override
     public User findById(Long id) {
-        return customerRepository.findById(id).orElse(null);
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<User> findAll() {
-        return customerRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     public User remove(Long id) {
         User user = this.findById(id);
-        customerRepository.deleteById(id);
+        userRepository.deleteById(id);
         return user;
     }
 
     @Override
     public User save(User model) {
-        return customerRepository.save(model);
+        return userRepository.save(model);
     }
 }

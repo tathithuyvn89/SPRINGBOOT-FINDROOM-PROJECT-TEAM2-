@@ -33,4 +33,9 @@ public class FeatureServiceImpl implements FeatureService {
     public Feature save(Feature model) {
         return featureRepository.save(model);
     }
+
+    @Override
+    public Boolean existsFeatureByName(String name) {
+        return featureRepository.existsFeatureByName(name);
+    }
 }

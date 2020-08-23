@@ -4,4 +4,5 @@ import com.codegym.vn.models.Feature;
 import com.codegym.vn.services.CrudServiceGeneric;
 
 public interface FeatureService extends CrudServiceGeneric<Feature> {
+    Boolean existsFeatureByName(String name);
 }

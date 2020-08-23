@@ -37,4 +37,8 @@ import java.util.List;
         return categoryHomeRepository.save(model);
     }
 
+    @Override
+    public Boolean existsCategoryHomesByNameCategoryHome(String name) {
+        return categoryHomeRepository.existsCategoryHomesByNameCategoryHome(name);
+    }
 }
