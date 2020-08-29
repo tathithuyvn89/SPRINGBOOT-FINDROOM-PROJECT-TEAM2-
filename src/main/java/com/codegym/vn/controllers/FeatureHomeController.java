@@ -1,6 +1,7 @@
 package com.codegym.vn.controllers;
 
 import com.codegym.vn.models.Feature;
+import com.codegym.vn.services.featureImpl.FeatureService;
 import com.codegym.vn.services.featureImpl.FeatureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,7 @@ import java.util.List;
 @RequestMapping("api/v1/featurehomes")
 public class FeatureHomeController {
     @Autowired
-    private FeatureServiceImpl featureService;
+    private FeatureService featureService;
 
     @PostMapping()
     public ResponseEntity<?> createNewFeature(@RequestBody Feature feature) {

@@ -2,7 +2,9 @@ package com.codegym.vn.controllers;
 
 import com.codegym.vn.models.House;
 import com.codegym.vn.models.Image;
+import com.codegym.vn.services.houseServiceImpl.HouseService;
 import com.codegym.vn.services.houseServiceImpl.HouseServiceImpl;
+import com.codegym.vn.services.imageServiceImpl.ImageService;
 import com.codegym.vn.services.imageServiceImpl.ImageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,13 +20,14 @@ import java.util.Set;
   public class HouseController {
 
   @Autowired
-  private HouseServiceImpl houseService;
+  private HouseService houseService;
 
   @Autowired
-  private ImageServiceImpl imageService;
+  private ImageService imageService;
   @PostMapping
   public ResponseEntity<House> createNewHouse(@RequestBody House  house) {
     House newHouse = new House();
+    house.getFeatures();
     newHouse.setNameHouse(house.getNameHouse());
     newHouse.setAddress(house.getAddress());
     newHouse.setBedroomNum(house.getBedroomNum());
@@ -33,7 +36,7 @@ import java.util.Set;
     newHouse.setPriceOneDay(house.getPriceOneDay());
 //    newHouse.setStatus(house.getStatus());
     newHouse.setCategoryHome(house.getCategoryHome());
-//    newHouse.setFeatures(house.getFeatures());
+    newHouse.setFeatures(house.getFeatures());
     //Sau khi tim duoc user_id cua nguoi dang se tien hang luu house vao db
     House reponse = houseService.save(newHouse);
     List<Image> images = house.getImages();
@@ -42,5 +45,23 @@ import java.util.Set;
       imageService.save(image);
     }
     return new ResponseEntity<>(reponse, HttpStatus.OK);
+  }
+  @GetMapping()
+  public ResponseEntity<List<House>> showListHouses(){
+    List<House> houses = houseService.findAll();
+    if (houses.size()==0) {
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    } else {
+      return new ResponseEntity<>(houses, HttpStatus.OK);
+    }
+  }
+  @GetMapping("/details/{id}")
+  public ResponseEntity<House> detailsOneHouseById(@PathVariable Long id) {
+    House house = houseService.findById(id);
+    if (house ==null) {
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    } else {
+      return new ResponseEntity<>(house, HttpStatus.OK);
+    }
   }
 }
