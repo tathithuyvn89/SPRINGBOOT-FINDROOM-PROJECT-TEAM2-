@@ -15,12 +15,14 @@ import java.util.Set;
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String nameHouse;
-  private String address;
   private String bedroomNum;
   private String bathroomNum;
   private String description;
   private String priceOneDay;
   private Boolean status; // Da thue hay chua duoc thue
+
+  @OneToOne
+  private HouseAddress houseAddress;
 
   @ManyToOne
   private CategoryHome categoryHome;
