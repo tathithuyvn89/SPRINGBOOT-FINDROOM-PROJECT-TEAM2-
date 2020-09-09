@@ -33,4 +33,9 @@ public class DistrictServiceImpl implements DistrictService {
     public District save(District model) {
         return null;
     }
+
+    @Override
+    public List<District> findAllByProvinceProvinceName(String provinceName) {
+        return districtRepository.findAllByProvinceProvinceName(provinceName);
+    }
 }
