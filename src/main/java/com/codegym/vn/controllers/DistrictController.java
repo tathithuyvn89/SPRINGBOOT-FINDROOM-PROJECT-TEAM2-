@@ -34,6 +34,5 @@ public class DistrictController {
         return new ResponseEntity<>(district, HttpStatus.OK);
     }
 
-
     }
 
