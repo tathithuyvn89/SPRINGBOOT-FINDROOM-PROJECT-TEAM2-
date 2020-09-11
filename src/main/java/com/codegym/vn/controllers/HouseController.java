@@ -24,7 +24,7 @@ import java.util.List;
   @PostMapping
   public ResponseEntity<House> createNewHouse(@RequestBody House  house) {
     House newHouse = new House();
-    house.getFeatures();
+    newHouse.setHouseAddress(house.getHouseAddress());
     newHouse.setNameHouse(house.getNameHouse());
     newHouse.setBedroomNum(house.getBedroomNum());
     newHouse.setBathroomNum(house.getBathroomNum());
