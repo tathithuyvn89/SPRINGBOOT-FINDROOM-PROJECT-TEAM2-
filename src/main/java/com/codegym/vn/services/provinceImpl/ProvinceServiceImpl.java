@@ -1,6 +1,6 @@
 package com.codegym.vn.services.provinceImpl;
 
-import com.codegym.vn.models.Province;
+import com.codegym.vn.models.house.Province;
 import com.codegym.vn.repositories.ProvinceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

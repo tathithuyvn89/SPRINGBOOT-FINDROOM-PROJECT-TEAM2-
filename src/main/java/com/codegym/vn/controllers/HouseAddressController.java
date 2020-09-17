@@ -1,12 +1,11 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.HouseAddress;
+import com.codegym.vn.models.house.HouseAddress;
 import com.codegym.vn.services.houseaddress.HouseAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sun.jvm.hotspot.debugger.Address;
 
 @CrossOrigin("*")
 @RestController

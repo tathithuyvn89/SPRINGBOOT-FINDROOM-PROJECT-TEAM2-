@@ -1,7 +1,6 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.CategoryHome;
-import com.codegym.vn.repositories.CategoryHomeRepository;
+import com.codegym.vn.models.house.CategoryHome;
 import com.codegym.vn.services.categoryHouseServiceImpl.CategoryHomeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

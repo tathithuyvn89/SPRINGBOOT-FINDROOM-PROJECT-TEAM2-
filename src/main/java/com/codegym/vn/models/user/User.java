@@ -1,5 +1,6 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.user;
 
+import com.codegym.vn.models.user.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,6 +21,7 @@ import java.util.Set;
     private String lastName;
     private String personId;
     private String address;
+    private String email;
     private String phoneNumber;
 
     @Column(columnDefinition = "TEXT")

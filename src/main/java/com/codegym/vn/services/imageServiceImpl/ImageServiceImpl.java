@@ -1,6 +1,6 @@
 package com.codegym.vn.services.imageServiceImpl;
 
-import com.codegym.vn.models.Image;
+import com.codegym.vn.models.house.Image;
 import com.codegym.vn.repositories.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

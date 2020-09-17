@@ -1,8 +1,7 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.Feature;
+import com.codegym.vn.models.house.Feature;
 import com.codegym.vn.services.featureImpl.FeatureService;
-import com.codegym.vn.services.featureImpl.FeatureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

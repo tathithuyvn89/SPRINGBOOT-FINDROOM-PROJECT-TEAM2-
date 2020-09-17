@@ -1,4 +1,4 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.house;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,10 +11,9 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-  public class CategoryRoom {
+public class Feature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameCategoryName;
-
+    private String name;
 }

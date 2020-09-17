@@ -1,7 +1,6 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.Image;
-import com.codegym.vn.services.imageServiceImpl.ImageService;
+import com.codegym.vn.models.house.Image;
 import com.codegym.vn.services.imageServiceImpl.ImageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

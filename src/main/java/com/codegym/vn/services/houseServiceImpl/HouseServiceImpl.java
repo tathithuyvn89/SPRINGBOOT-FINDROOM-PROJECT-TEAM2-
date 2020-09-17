@@ -1,6 +1,6 @@
 package com.codegym.vn.services.houseServiceImpl;
 
-import com.codegym.vn.models.House;
+import com.codegym.vn.models.house.House;
 import com.codegym.vn.repositories.HouseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

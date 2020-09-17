@@ -1,6 +1,6 @@
 package com.codegym.vn.repositories;
 
-import com.codegym.vn.models.Booking;
+import com.codegym.vn.models.house.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

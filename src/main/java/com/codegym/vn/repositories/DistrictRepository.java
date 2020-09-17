@@ -1,6 +1,6 @@
 package com.codegym.vn.repositories;
 
-import com.codegym.vn.models.District;
+import com.codegym.vn.models.house.District;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

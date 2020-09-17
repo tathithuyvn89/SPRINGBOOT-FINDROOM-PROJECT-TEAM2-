@@ -1,4 +1,4 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.house;
 
 import lombok.Data;
 

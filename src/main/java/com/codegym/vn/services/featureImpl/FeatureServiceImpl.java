@@ -1,6 +1,6 @@
 package com.codegym.vn.services.featureImpl;
 
-import com.codegym.vn.models.Feature;
+import com.codegym.vn.models.house.Feature;
 import com.codegym.vn.repositories.FeatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

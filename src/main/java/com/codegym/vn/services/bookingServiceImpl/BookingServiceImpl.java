@@ -1,6 +1,6 @@
 package com.codegym.vn.services.bookingServiceImpl;
 
-import com.codegym.vn.models.Booking;
+import com.codegym.vn.models.house.Booking;
 import com.codegym.vn.repositories.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

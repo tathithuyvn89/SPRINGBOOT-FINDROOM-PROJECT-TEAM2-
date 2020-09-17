@@ -1,4 +1,4 @@
-package com.codegym.vn.controllers;
+package com.codegym.vn.models.service;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

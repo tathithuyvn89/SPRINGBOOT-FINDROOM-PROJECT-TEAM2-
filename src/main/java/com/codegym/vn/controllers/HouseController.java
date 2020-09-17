@@ -1,7 +1,7 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.House;
-import com.codegym.vn.models.Image;
+import com.codegym.vn.models.house.House;
+import com.codegym.vn.models.house.Image;
 import com.codegym.vn.services.houseServiceImpl.HouseService;
 import com.codegym.vn.services.imageServiceImpl.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;

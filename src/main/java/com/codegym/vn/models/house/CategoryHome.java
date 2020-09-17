@@ -1,4 +1,4 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.house;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,13 +8,10 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Image {
+  public class CategoryHome {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String srcImg;
-
-    @ManyToOne()
-    private House house;
+    private String nameCategoryHome;
 
 }

@@ -1,6 +1,6 @@
 package com.codegym.vn.services.categoryHouseServiceImpl;
 
-import com.codegym.vn.models.CategoryHome;
+import com.codegym.vn.models.house.CategoryHome;
 import com.codegym.vn.repositories.CategoryHomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

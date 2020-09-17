@@ -1,17 +1,18 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.house;
 
+import com.codegym.vn.models.house.District;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-public class District {
+public class HouseAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String districtName;
+    private String name;
 
     @ManyToOne
-    private Province province;
+    private District district;
 }

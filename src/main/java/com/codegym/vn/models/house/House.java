@@ -1,5 +1,6 @@
-package com.codegym.vn.models;
+package com.codegym.vn.models.house;
 
+import com.codegym.vn.models.user.User;
 import lombok.Getter;
 import lombok.Setter;
 

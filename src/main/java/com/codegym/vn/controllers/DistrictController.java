@@ -1,6 +1,6 @@
 package com.codegym.vn.controllers;
 
-import com.codegym.vn.models.District;
+import com.codegym.vn.models.house.District;
 import com.codegym.vn.services.districtImpl.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
