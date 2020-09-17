@@ -1,5 +1,6 @@
 package com.codegym.vn.services.userServiceImpl;
 
+import com.codegym.vn.models.auth_security.AccountPrinciple;
 import com.codegym.vn.models.user.User;
 import com.codegym.vn.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
   public class UserServiceImpl implements UserService {
@@ -39,6 +42,10 @@ import java.util.List;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        Optional<User>  userOptional = userRepository.findUserByUsername(username);
+        if (!userOptional.isPresent()) {
+            throw new UsernameNotFoundException(username);
+        }
+        return AccountPrinciple.build(userOptional.get());
     }
 }

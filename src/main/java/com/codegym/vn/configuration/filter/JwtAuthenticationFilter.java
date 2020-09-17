@@ -3,7 +3,11 @@ package com.codegym.vn.configuration.filter;
 import com.codegym.vn.services.JwtService;
 import com.codegym.vn.services.userServiceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationDetailsSource;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -21,18 +25,25 @@ public class  JwtAuthenticationFilter extends OncePerRequestFilter {
     private UserService userService;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
         try {
           String jwt = getJwtFromRequest(request);
           if (jwt != null && jwtService.validateJwtToken(jwt)) {
               String username =jwtService.getUserNameFromJwtToken(jwt);
 
-              UserDetails userDetails = userService.
+              UserDetails userDetails = userService.loadUserByUsername(username);
+              UsernamePasswordAuthenticationToken authenticationToken =
+                      new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+              authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+              SecurityContextHolder.getContext().setAuthentication(authenticationToken);
           }
 
         }catch (Exception e ){
             logger.error("Can not set user authentication -> Message: {}", e);
         }
+        filterChain.doFilter(request,response);
 
     }
 
