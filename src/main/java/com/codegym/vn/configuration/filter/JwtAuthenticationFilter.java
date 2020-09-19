@@ -3,7 +3,6 @@ package com.codegym.vn.configuration.filter;
 import com.codegym.vn.services.JwtService;
 import com.codegym.vn.services.userServiceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationDetailsSource;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,8 +42,8 @@ public class  JwtAuthenticationFilter extends OncePerRequestFilter {
         }catch (Exception e ){
             logger.error("Can not set user authentication -> Message: {}", e);
         }
-        filterChain.doFilter(request,response);
 
+        filterChain.doFilter(request,response);
     }
 
     private String getJwtFromRequest(HttpServletRequest request) {

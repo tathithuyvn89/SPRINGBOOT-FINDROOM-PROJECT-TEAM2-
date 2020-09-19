@@ -19,6 +19,7 @@ public class JwtService {
     private static final Logger logger = LoggerFactory.getLogger(JwtService.class.getName());
 
     public String generateTokenLogin(Authentication authentication) {
+
         AccountPrinciple accountPrinciple = (AccountPrinciple)authentication.getPrincipal();
 
         return Jwts.builder()

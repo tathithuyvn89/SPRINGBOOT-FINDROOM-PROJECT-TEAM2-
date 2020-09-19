@@ -12,24 +12,34 @@ public class JwtResponse {
   private Long id;
   private String token;
   private String type = "Bearer";
-  private String username;
-  private String name;
+  private String userName;
+  private String firstName;
+  private String lastName;
   private Collection<? extends GrantedAuthority> roles;
 
-    public JwtResponse(Long id, String accessToken, String type, String username,
-                       String name, Collection<? extends GrantedAuthority> roles) {
+    public JwtResponse( String accessToken,Long id, String userName, String firstName,
+                       String lastName, Collection<? extends GrantedAuthority> roles) {
         this.id = id;
-        this.token = token;
-        this.type = type;
-        this.username = username;
-        this.name = name;
+        this.token = accessToken;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.roles = roles;
     }
-    public String getName() {
-        return this. name;
+
+    public String getUserName() {
+        return userName;
     }
-    public void setName(String name){
-        this.name = name;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -56,12 +66,12 @@ public class JwtResponse {
         this.type = type;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Collection<? extends GrantedAuthority> getRoles() {

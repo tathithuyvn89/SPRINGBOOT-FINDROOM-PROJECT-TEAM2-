@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/houses")
   public class HouseController {
-
   @Autowired
   private HouseService houseService;
 
@@ -23,6 +22,7 @@ import java.util.List;
   private ImageService imageService;
   @PostMapping
   public ResponseEntity<House> createNewHouse(@RequestBody House  house) {
+
     House newHouse = new House();
     newHouse.setHouseAddress(house.getHouseAddress());
     newHouse.setNameHouse(house.getNameHouse());
@@ -32,6 +32,7 @@ import java.util.List;
     newHouse.setPriceOneDay(house.getPriceOneDay());
     newHouse.setCategoryHome(house.getCategoryHome());
     newHouse.setFeatures(house.getFeatures());
+
     //Sau khi tim duoc user_id cua nguoi dang se tien hang luu house vao db
     House reponse = houseService.save(newHouse);
     List<Image> images = house.getImages();
@@ -44,7 +45,7 @@ import java.util.List;
   @GetMapping()
   public ResponseEntity<List<House>> showListHouses(){
     List<House> houses = houseService.findAll();
-    if (houses.size()==0) {
+    if (houses==null) {
       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     } else {
       return new ResponseEntity<>(houses, HttpStatus.OK);
@@ -59,4 +60,6 @@ import java.util.List;
       return new ResponseEntity<>(house, HttpStatus.OK);
     }
   }
+
+
 }

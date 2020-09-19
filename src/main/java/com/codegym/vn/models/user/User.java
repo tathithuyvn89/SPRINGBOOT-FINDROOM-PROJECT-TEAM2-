@@ -27,6 +27,6 @@ import java.util.Set;
     @Column(columnDefinition = "TEXT")
     private String avatar;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
   private Set<Role> roles;
 }

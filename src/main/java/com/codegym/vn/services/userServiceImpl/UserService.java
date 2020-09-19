@@ -4,5 +4,9 @@ import com.codegym.vn.models.user.User;
 import com.codegym.vn.services.CrudServiceGeneric;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.util.Optional;
+
 public interface UserService extends CrudServiceGeneric<User>, UserDetailsService {
+    Optional<User>  findUserByUsername(String username);
+
 }
